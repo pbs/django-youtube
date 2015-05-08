@@ -7,6 +7,7 @@ README = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'README.md')
 
 DEPENDENCIES = [
     'django >=1.4, <1.5',
+    'google-api-python-client'
 ]
 
 
@@ -18,7 +19,7 @@ DEPENDENCY_LINKS = [
 
 setup(
     name='django-youtube',
-    version='0.1',
+    version='0.1.0',
     description='Youtube API for Django',
     long_description = open(README, 'r').read(),
     author='Alexandru Pirjol',
