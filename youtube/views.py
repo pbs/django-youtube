@@ -29,5 +29,5 @@ def search(request):
 
     if JSON_RESPONSE_AVAILABLE:
         return JsonResponse(result)
-    else:
-        return HttpResponse(json.dumps(result), mimetype='application/json')
+
+    return HttpResponse(json.dumps(result), mimetype='application/json')
