@@ -1,5 +1,10 @@
-from django.http import HttpResponse
-from django.utils import simplejson
+import json
+try:
+    from django.http import JsonResponse
+    JSON_RESPONSE_AVAILABLE = True
+except ImportError:
+    from django.http import HttpResponse
+    JSON_RESPONSE_AVAILABLE = False
 from .api import youtube_search
 
 YOUTUBE_RES_TYPES = ('video', 'channel', 'playlist')
@@ -22,4 +27,7 @@ def search(request):
         result['items'] = filter(lambda x: x["id"]["kind"] == restype,
                                  result.get("items", []))
 
-    return HttpResponse(simplejson.dumps(result), mimetype='application/json')
+    if JSON_RESPONSE_AVAILABLE:
+        return JsonResponse(result)
+
+    return HttpResponse(json.dumps(result), mimetype='application/json')
