@@ -19,7 +19,7 @@ DEPENDENCY_LINKS = [
 
 setup(
     name='django-youtube',
-    version='0.1.0',
+    version='0.2.0',
     description='Youtube API for Django',
     long_description = open(README, 'r').read(),
     author='Alexandru Pirjol',
