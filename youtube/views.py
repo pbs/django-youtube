@@ -8,14 +8,21 @@ except ImportError:
 from .api import youtube_search
 
 YOUTUBE_RES_TYPES = ('video', 'channel', 'playlist')
-
+YOUTUBE_MAX_RESULTS = 50
+DEFAULT_MAX_RESULTS = 25
 
 def search(request):
     search_term = request.GET.get('search_term', '')
     restype = request.GET.get('restype', 'video')
-    max_results = request.GET.get('max_results', 25)
-    if max_results > 50:
-        max_results = 50
+    max_results = request.GET.get('max_results', DEFAULT_MAX_RESULTS)
+
+    try:
+        max_results = int(max_results)
+    except ValueError:
+        max_results = DEFAULT_MAX_RESULTS
+
+    if max_results > YOUTUBE_MAX_RESULTS:
+        max_results = YOUTUBE_MAX_RESULTS
     if max_results < 0:
         max_results = 0
 
