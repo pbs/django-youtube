@@ -18,7 +18,7 @@ def search(request):
 
     try:
         max_results = int(max_results)
-    except ValueError, TypeError:
+    except (ValueError, TypeError):
         max_results = DEFAULT_MAX_RESULTS
 
     max_results = min(max_results, YOUTUBE_MAX_RESULTS)
