@@ -18,13 +18,11 @@ def search(request):
 
     try:
         max_results = int(max_results)
-    except ValueError:
+    except ValueError, TypeError:
         max_results = DEFAULT_MAX_RESULTS
 
-    if max_results > YOUTUBE_MAX_RESULTS:
-        max_results = YOUTUBE_MAX_RESULTS
-    if max_results < 0:
-        max_results = 0
+    max_results = min(max_results, YOUTUBE_MAX_RESULTS)
+    max_results = max(max_results, 0)
 
     result = youtube_search(search_term=search_term,
                             max_results=max_results)
