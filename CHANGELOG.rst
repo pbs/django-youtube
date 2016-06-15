@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+Revision aa6764d (15.06.2016, 14:01 UTC)
+----------------------------------------
+
+No new issues.
+
+* Misc commits
+
+  * Limit django versions to 1.8.
+
 Revision 26b8f77 (30.07.2015, 09:03 UTC)
 ----------------------------------------
 
