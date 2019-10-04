@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+Revision fadb485 (04.10.2019, 12:24 UTC)
+----------------------------------------
+
+No new issues.
+
+* Misc commits
+
+  * Pin attrs package
+
 Revision 8765fd1 (02.11.2018, 16:44 UTC)
 ----------------------------------------
 
